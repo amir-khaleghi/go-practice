@@ -103,32 +103,57 @@ package main
 
 /* ■■■■■■■■■■■■■■■■■■■■■■■ Struct ■■■■■■■■■■■■■■■■■■■■■■■ */
 
+// import "fmt"
+
+// func main (){
+
+// 	/* Define Type ----------------------------------------- */
+// 	type Student struct {
+// 		Name string
+// 		Age  uint
+// 		Grade int
+// 		ID int
+// 	}
+
+// 	/* Use Type -------------------------------------------- */
+// 	var amir Student
+// 	amir.Name = "Amir"
+// 	fmt.Println(amir)
+
+// 	var Eli = Student{
+// 		ID: 234,
+// 		Name: "Eli",
+// 		Age:  20,
+// 	}
+// 	fmt.Println(Eli)
+
+// 	var Ati = Student{"Ati", 20, 20, 23}
+
+// 	fmt.Println(Ati)
+
+// }
+
+/* ■■■■■■■■■■■■■■■■■■■■■■■ PrintF ■■■■■■■■■■■■■■■■■■■■■■■ */
+
 import "fmt"
 
-func main (){
+func main(){
 
-	/* Define Type ----------------------------------------- */
-	type Student struct {
+	type ShoppingCard struct{
 		Name string
-		Age  uint
-		Grade int
-		ID int
+		Price float64
+		Quantity int
+		isActive bool
 	}
 
-	/* Use Type -------------------------------------------- */
-	var amir Student
-	amir.Name = "Amir"
-	fmt.Println(amir)
 
-	var Eli = Student{
-		ID: 234,
-		Name: "Eli",
-		Age:  20,
+	var card_01 = ShoppingCard{
+		Name: "Apple",
+		Price: 10.99,
+		Quantity: 2,
+		isActive : true, // this is a private variable and can't be accessed
 	}
-	fmt.Println(Eli)
 
-	var Ati = Student{"Ati", 20, 20, 23}
-
-	fmt.Println(Ati)
+	fmt.Printf("The Name of Card is : %s, and The Price: %.2f,and Finally the Quantity: %d\n The process is : %t ", card_01.Name, card_01.Price,card_01.Quantity, card_01.isActive)
 
 }
