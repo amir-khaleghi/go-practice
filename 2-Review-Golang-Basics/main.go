@@ -3,54 +3,34 @@ package main
 import "fmt"
 
 func main() {
-	// fmt.Println("test fmt")
 
-	/* Types ---------------------------------------------- */
-	// var i int = 3
-	// var f float64 = 3.43
-	// var s stirng = "test"
-	// var character rune = "سلام "
-
-	/* Define Variables ----------------------------------- */
-	// var firstName string
-	// firstName = "Amir"
-
-	// var lastName string = "Khaleghi"
-
-	// var middleName = "Jafar"
-
-	// email := "amir@gmail.com"
-
-	/* Case Sensitivity ----------------------------------- */
-
-	// var name = "a"
-	// var Name = "b"
-
-	/* Zero Value ----------------------------------------- */
-	// zero value in string is "" in go
-	var companyName string
-
-	if companyName == "" {
-		fmt.Println("default name")
-	} else {
-		fmt.Println("company name:", companyName)
-
+	/* For Loop ------------------------------------------- */
+	var active = true
+	for i := 0; active; i++ {
+		fmt.Printf("i=%d\n", i)
+		if i == 10 {
+			active = false
+		}
 	}
 
-	// for rune zero value is 0
-	// var r rune
+	/* Make ------------------------------------------------- */
 
-	// for float is 0.0
-	// var f float64
+	var sl = make([]int, 5, 10)
+	fmt.Printf("sl: %d\n", sl)
+	sl[0] = 10
+	fmt.Printf("sl: %d\n", sl)
 
-	// boolean zero value is false
-	var b bool
-	if !b {
-		fmt.Println("b is false")
-	}
+	/* Append --------------------------------------------- */
 
-	/* ■■■■■■■■■■■■■■■■■■■■■■ Printf ■■■■■■■■■■■■■■■■■■■■■■ */
-	templateString := "My name is %s. and my age is %d.\n"
-	fmt.Printf(templateString, "Amir", 30)
+	var s []int
+
+	fmt.Println("appendme:", s)
+	s = append(s, 2, 2, 3)
+	fmt.Println("appendme:", s)
+
+	/* Alias ---------------------------------------------- */
+	type Amir int
+	type ahmad = Amir
+	// ahmad is an alias for Amir
 
 }

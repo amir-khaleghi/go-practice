@@ -1,0 +1,89 @@
+package main
+
+import (
+	"fmt"
+	"review/student"
+	"strings"
+)
+
+func main() {
+	// fmt.Println("test fmt")
+
+	/* Types ---------------------------------------------- */
+	// var i int = 3
+	// var f float64 = 3.43
+	// var s stirng = "test"
+	// var character rune = "سلام "
+
+	/* Define Variables ----------------------------------- */
+	// var firstName string
+	// firstName = "Amir"
+
+	// var lastName string = "Khaleghi"
+
+	// var middleName = "Jafar"
+
+	// email := "amir@gmail.com"
+
+	/* Case Sensitivity ----------------------------------- */
+
+	// var name = "a"
+	// var Name = "b"
+
+	/* Zero Value ----------------------------------------- */
+	// zero value in string is "" in go
+	var companyName string
+
+	if companyName == "" {
+		fmt.Println("default name")
+	} else {
+		fmt.Println("company name:", companyName)
+
+	}
+
+	// for rune zero value is 0
+	// var r rune
+
+	// for float is 0.0
+	// var f float64
+
+	// boolean zero value is false
+	var b bool
+	if !b {
+		fmt.Println("b is false")
+	}
+
+	/* ■■■■■■■■■■■■■■■■■■■■■■ Printf ■■■■■■■■■■■■■■■■■■■■■■ */
+	templateString := "My name is %s. and my age is %d.\n"
+	fmt.Printf(templateString, "Amir", 30)
+
+	/* Import A Package ------------------------------------ */
+	result := student.AvgScore(2, 3, 12)
+	fmt.Println("result: ", result)
+
+	/* Use Name Func --------------------------------------- */
+	res := name(1, 2.0)
+	res = strings.Replace(res, "int:", "INT:", -1)
+
+	fmt.Println(res)
+
+	/* Convert --------------------------------------------- */
+	var a amir
+	var i int = 2
+
+	a = amir(i)
+
+	if a == 10 {
+		panic("panic")
+	}
+}
+
+type amir int
+
+/* Func Name -------------------------------------------- */
+
+func name(a int, b float64) string {
+	fmt.Printf("int: %d, int: %f\n", a, b)
+
+	return fmt.Sprintf("int: %d, int: %f\n", a, b)
+}
